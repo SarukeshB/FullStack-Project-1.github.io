@@ -1,0 +1,20 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding-bottom: 12.5px;
+    
+}
+
+span {
+    color: rgb(72, 217, 249);
+}
+
+footer p {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+}
