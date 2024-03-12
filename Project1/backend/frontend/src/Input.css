@@ -11,15 +11,17 @@ input {
     border: none;
     border-radius: 8px;
     padding: 10px 0px;
+    text-align: center;
 }
 
 label {
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-right: 20px;
+    
     margin-bottom: 10px;
-    padding-bottom: 10px;
     text-align: start;
+    display: block;
+    text-align: center;
 }
 
 .button-38 {
