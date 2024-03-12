@@ -17,7 +17,7 @@ def store_name(request):
             email = data.get('email')
             if name:
                 with open('name.txt', 'a')as f:
-                    f.write('Name: ' + name + "" +'Mobile Number : '+ mobile + "" + 'Email ID: ' + email )
+                    f.write('\n' + 'Name: ' + name + '\n'+'Mobile Number : '+ mobile + '\n' +'Email ID: ' + email + '\n')
                 return JsonResponse({'success': True, 'message': 'Name stored successfully'})
             else:
                 return JsonResponse({'success': False, 'message': 'No name provided'}, status=400)
