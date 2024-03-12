@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.http import HttpResponse
 import os
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -17,7 +18,7 @@ def store_name(request):
             email = data.get('email')
             if name:
                 with open('name.txt', 'a')as f:
-                    f.write('\n' + 'Name: ' + name + '\n'+'Mobile Number : '+ mobile + '\n' +'Email ID: ' + email + '\n')
+                    f.write( '\nName: ' + name +'\nMobile Number : '+ mobile +'\nEmail ID: ' + email)
                 return JsonResponse({'success': True, 'message': 'Name stored successfully'})
             else:
                 return JsonResponse({'success': False, 'message': 'No name provided'}, status=400)
@@ -26,3 +27,16 @@ def store_name(request):
             return JsonResponse({'success': False, 'message': 'Failed to store name'}, status=500)
     else:
         return JsonResponse({'success': False, 'message': 'Method not allowed'}, status=405)
+
+
+def get_data(request):
+    try:
+        with open('name.txt', 'r') as file:
+            data = file.read()
+        return HttpResponse(data, content_type='text/plain')
+    except FileNotFoundError:
+        return HttpResponse("File not found", status=404)
+    except Exception as e:
+        return HttpResponse(str(e), status=500)
+
+    
