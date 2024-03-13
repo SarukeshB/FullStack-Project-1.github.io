@@ -20,13 +20,13 @@ const Navbar = () => {
         <nav id="navbar" class="nav">
         <ul>
             <li>
-                <a href="about.html">About Me</a>
+                <a href="https://www.sarukesh.com/aboutme.html">About Me</a>
             </li>
             <li>
                 <button onClick={handleGetData}>Data</button>
             </li>
             <li>
-                <a href="contact.html">Contact</a>
+                <a href="https://www.sarukesh.com/contact.html">Contact</a>
             </li>
         </ul>
     </nav>
