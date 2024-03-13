@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.http import HttpResponse
+from django.http import FileResponse
 import os
 from django.views.decorators.csrf import csrf_exempt
 import json
+
 
 def index(request):
     return render(request, 'index.html')
@@ -39,4 +41,15 @@ def get_data(request):
     except Exception as e:
         return HttpResponse(str(e), status=500)
 
-    
+
+
+
+def download_data(request):
+    try:
+        file_path = "doc.pdf"
+        if os.path.exists(file_path):
+            return FileResponse(open(file_path, 'rb'), as_attachment=True)
+        else:
+            return HttpResponse("File not found", status=404)
+    except Exception as e:
+        return HttpResponse(str(e), status=500)

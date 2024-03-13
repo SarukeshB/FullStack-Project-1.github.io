@@ -19,10 +19,12 @@ from django.urls import path
 from .views import index
 from .views import store_name
 from .views import get_data
+from .views import download_data
 
 urlpatterns = [
     path("", index),
     path('store-name/', store_name, name='store_name'),
+    path('documentation/downloads', download_data, name='download_documentation'),
     path('get-data/', get_data, name='get_data'),
     path('admin/', admin.site.urls),
 ]

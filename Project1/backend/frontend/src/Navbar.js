@@ -15,6 +15,15 @@ const Navbar = () => {
             alert('Failed to fetch data. Please try again.');
         }
     };
+    const handleDownloadDocumentation = async () => {
+        try {
+            window.location.href = 'http://localhost:8000/documentation/downloads';
+        } catch (error) {
+            console.error('Error downloading documentation:', error);
+            alert('Failed to download documentation. Please try again.');
+        }
+    };
+    
 
     return (
         <nav id="navbar" class="nav">
@@ -26,7 +35,7 @@ const Navbar = () => {
                 <button onClick={handleGetData}>Data</button>
             </li>
             <li>
-                <a href="https://www.sarukesh.com/contact.html">Contact</a>
+            <button onClick={handleDownloadDocumentation}>Documentation</button>
             </li>
         </ul>
     </nav>
