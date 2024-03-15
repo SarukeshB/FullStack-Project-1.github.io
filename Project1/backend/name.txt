@@ -1,25 +1,10 @@
 
-Name: jhvwdcjW
-Mobile Number : +421910240413
-Email ID: contactme@sarukesh.com
-Name: today
-Mobile Number : +919566432194
-Email ID: bsarukesh@gmail.com
-Name: niaz
-Mobile Number : 09789775806
-Email ID: karinternationalinfotech@gmail.com
-Name: newe
-Mobile Number : +421910240413
-Email ID: contactme@sarukesh.com
-Name: jayuedcv
-Mobile Number : +421910240413
-Email ID: bsarukesh@gmail.com
-Name: sarukesh
-Mobile Number : +421910240413
-Email ID: contactme@sarukesh.com
-Name: muhilan
-Mobile Number : +919566432194
-Email ID: bsarukesh@gmail.com
-Name: tom
-Mobile Number : +919566432194
-Email ID: bsarukesh@gmail.com
+Name: saru
+Mobile Number : +919566077085
+Email ID: class01@krishnainternationalschool.org
+Name: 1
+Mobile Number : eat
+Email ID: 22/2/2024
+Id: 2
+Task : wacw
+Due-Date : wcwv
