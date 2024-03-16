@@ -1,3 +1,5 @@
+//                                                                          SARUKESH BOOMINATHAN
+
 import React from 'react'
 import "./Navbar.css";
 import axios from 'axios';
@@ -7,7 +9,6 @@ const Navbar = () => {
         try {
             const response = await axios.get('http://localhost:8000/get-data/');
             const data = response.data;
-            // Open a new window with the data
             const newWindow = window.open('', '_blank');
             newWindow.document.write(data);
         } catch (error) {
