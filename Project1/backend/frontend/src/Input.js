@@ -13,7 +13,7 @@ function NameForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            axios.post('http://localhost:8000/store-name/', { id, title, due_date })
+            axios.post('/store-name/', { id, title, due_date })
             alert('Data stored successfully!');
             setId('');
             setTitle('');
