@@ -37,7 +37,7 @@ def get_data(request):
     try:
         with open('name.txt', 'r') as file:
             data = file.read()
-        return HttpResponse(data, content_type='text/plain')
+        return HttpResponse(data, content_type='plain/text')
     except FileNotFoundError:
         return HttpResponse("File not found", status=404)
     except Exception as e:

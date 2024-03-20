@@ -7,7 +7,7 @@ import axios from 'axios';
 const Navbar = () => {
     const handleGetData = async () => {
         try {
-            const response = await axios.get('/get-data/');
+            const response = await axios.get('http://localhost:8000/get-data/');
             const data = response.data;
             const newWindow = window.open('', '_blank');
             newWindow.document.write(data);
@@ -18,7 +18,7 @@ const Navbar = () => {
     };
     const handleDownloadDocumentation = async () => {
         try {
-            window.location.href = '/documentation/downloads';
+            window.location.href = 'http://localhost:8000/documentation/downloads';
         } catch (error) {
             console.error('Error downloading documentation:', error);
             alert('Failed to download documentation. Please try again.');

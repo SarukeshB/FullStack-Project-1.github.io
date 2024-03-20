@@ -125,3 +125,13 @@ form input {
 .button-38:focus-visible {
     box-shadow: none;
 }
+.submitted-data h2{
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.submitted-data p{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
