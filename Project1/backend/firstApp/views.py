@@ -1,4 +1,3 @@
-# views.py
 
 import os
 import json
@@ -67,7 +66,7 @@ def delete_data(request):
                     while i < len(lines):
                         if f'Id: {id_to_delete}' in lines[i]:
                             deleted = True
-                            i += 3  # Skip all 3 lines of the entry to be deleted
+                            i += 3  
                             continue
                         file.write(lines[i])
                         i += 1

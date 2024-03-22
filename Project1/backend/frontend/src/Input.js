@@ -52,7 +52,7 @@ function NameForm() {
             </form>
             <form>
                 <div>
-                    {/* New input field for entering ID to delete */}
+                    
                     <label>
                         Remove Completed Task
                         <input className='Complete-label' placeholder='Enter ID to Remove' type="text" value={idToDelete} onChange={(e) => setIdToDelete(e.target.value)} />
