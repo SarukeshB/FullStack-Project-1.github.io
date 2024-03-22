@@ -19,7 +19,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from firstApp.views import index, store_name, get_data, download_data, delete_data
+from firstApp.views import index, store_name, get_data, download_data, delete_data, search_task_details
 
 urlpatterns = [
     path('', index),
@@ -27,5 +27,6 @@ urlpatterns = [
     path('get-data/', get_data, name='get_data'),
     path('download/', download_data, name='download_data'),
     path('delete-data/', delete_data, name='delete_data'),
+    path('search-task-details/', search_task_details, name='search_task_details'),
     path('admin/', admin.site.urls),
 ]
