@@ -1,65 +1,4 @@
-/* div{
-    text-align: center;
-}
-
-form {
-    text-align: center;
-    margin-top: 100px;
-    border: 3px solid rgb(95, 175, 225);
-    padding: 15px;
-    width: 100%;
-    border-radius: 8px;
-}
-
-input {
-    border: none;
-    border-radius: 8px;
-    padding: 15px 40px;
-    text-align: center;
-}
-
-label {
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 10px;
-    text-align: start;
-    display: block;
-    text-align: center;
-}
-
-.button-38 {
-    background-color: #FFFFFF;
-    border: 0;
-    border-radius: .5rem;
-    box-sizing: border-box;
-    color: #111827;
-    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: .875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    padding: .50rem 1rem;
-    text-align: center;
-    text-decoration: none #D1D5DB solid;
-    text-decoration-thickness: auto;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-.button-38:hover {
-    background-color: rgb(249, 250, 251);
-}
-
-.button-38:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-}
-
-.button-38:focus-visible {
-    box-shadow: none;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Anta&family=League+Spartan:wght@100..900&family=Ojuju:wght@200..800&family=Rubik+Doodle+Shadow&display=swap');
 
 div {
     text-align: center;
@@ -69,16 +8,17 @@ form {
     margin-top: 100px;
     margin-bottom: 100px;
     border: 1px solid rgb(255, 255, 255);
-    padding: 15px;
-    width: 90%; /* Adjust the width as needed */
+    margin: 15px;
+    width: 92%;
     border-radius: 8px;
-    
+
 }
 
 form label {
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-family: "Rubik Doodle Shadow", system-ui;
     margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
     display: block;
 }
@@ -88,9 +28,10 @@ form input {
     border-radius: 8px;
     padding: 15px 40px;
     text-align: center;
-    width: 100%; /* Make the input width full */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
-    margin-bottom: 15px; /* Add some space between inputs */
+    width: 90%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+   
 }
 
 .button-38 {
@@ -111,6 +52,8 @@ form input {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+    margin-bottom: 20px;
+
 }
 
 .button-38:hover {
@@ -125,13 +68,26 @@ form input {
 .button-38:focus-visible {
     box-shadow: none;
 }
-.submitted-data h2{
+
+.submitted-data h2 {
     font-size: 23px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-.submitted-data p{
+
+.submitted-data p {
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
+}
+
+.Complete-label {
+    margin-top: 20px;
+}
+
+div h2 {
+    font-size: 27px;
+    font-family: "Rubik Doodle Shadow", system-ui;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
