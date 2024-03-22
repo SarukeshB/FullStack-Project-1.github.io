@@ -18,7 +18,7 @@ const Navbar = () => {
     };
     const handleDownloadDocumentation = async () => {
         try {
-            window.location.href = 'http://localhost:8000/documentation/downloads';
+            window.location.href = 'http://localhost:8000/download/';
         } catch (error) {
             console.error('Error downloading documentation:', error);
             alert('Failed to download documentation. Please try again.');
