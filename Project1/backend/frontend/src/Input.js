@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Input.css';
@@ -17,7 +16,11 @@ function NameForm() {
     const fetchData = async () => {
         try {
             const response = await axios.get('/get-data/');
-            setTasks(response.data.split('\n'));
+            if (response.data && Array.isArray(response.data)) {
+                setTasks(response.data);
+            } else {
+                console.error('Invalid response data:', response.data);
+            }
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -74,9 +77,9 @@ function NameForm() {
                     {tasks.map((task, index) => (
                         <li key={index}>{task && (
                             <div className='output'>
-                                <div> {task.split('\n')[0]}</div>
-                                <div> {task.split('\n')[1]}</div>
-                                <div> {task.split('\n')[2]}</div>
+                                <div> {task.id}</div>
+                                <div> {task.title}</div>
+                                <div> {task.due_date}</div>
                             </div>
                         )}</li>
                     ))}
