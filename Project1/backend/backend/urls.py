@@ -17,16 +17,18 @@ Including another URLconf
 """
 # urls.py
 
-from django.contrib import admin
 from django.urls import path
-from firstApp.views import index, store_name, get_data, download_data, delete_data, search_task_details
+from django.contrib import admin
+from firstApp.views import index, store_name, get_data, download_data, delete_data, search_task_details, signup, login
 
 urlpatterns = [
-    path('', index),
+    path('admin/', admin.site.urls),
+    path('', index, name='index'),
+    path('signup/', signup, name='signup'),  # Use a trailing slash for consistency
+    path('login/', login, name='login'),  # Use a trailing slash for consistency
     path('store-name/', store_name, name='store_name'),
     path('get-data/', get_data, name='get_data'),
     path('download/', download_data, name='download_data'),
     path('delete-data/', delete_data, name='delete_data'),
     path('search-task-details/', search_task_details, name='search_task_details'),
-    path('admin/', admin.site.urls),
 ]

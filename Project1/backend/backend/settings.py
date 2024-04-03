@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'firstApp',
     'rest_framework',
     'rest_framework.authtoken',
+    
 
 ]
 
@@ -59,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR , 'frontend/build')
+            os.path.join(BASE_DIR , 'frontend/build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -84,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'PASSWORD':'postgres',
         'HOST': 'localhost',
         'PORT': '5432',
     }}
@@ -124,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

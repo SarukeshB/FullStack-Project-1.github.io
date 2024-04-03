@@ -35,6 +35,7 @@ function NameForm() {
             setTitle('');
             setDueDate('');
             fetchData();
+            setIdToDelete('');
         } catch (error) {
             console.error('Error storing name:', error);
             alert('Failed to store name. Please try again.');
@@ -46,13 +47,13 @@ function NameForm() {
             await axios.post('/delete-data/', { id: idToDelete });
             alert('Data deleted successfully!');
             setIdToDelete('');
-            fetchData();
+            setTasks(tasks.filter(task => task.id !== idToDelete));
         } catch (error) {
             console.error('Error deleting data:', error);
             alert('Failed to delete data. Please try again.');
         }
     };
-
+    
     return (
         <div className="App-header">
             <h2>Create your To Do List ✍🏻</h2>

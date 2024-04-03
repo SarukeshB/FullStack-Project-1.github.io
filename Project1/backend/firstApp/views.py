@@ -1,16 +1,50 @@
 import os
 import json
 import logging
+from .models import Task
+from rest_framework import status
+from django.shortcuts import render
+from .serializers import TaskSerializer
+from rest_framework.decorators import api_view
 from django.http import JsonResponse, HttpResponse, FileResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import render
-from .models import Task
-from .serializers import TaskSerializer
+from rest_framework.response import Response
+from .serializers import UserSerializer
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+
 
 logger = logging.getLogger(__name__)
 
 def index(request):
     return render(request, 'index.html')
+
+
+@api_view(['POST'])
+def signup(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        user = User.objects.get(username=request.data['username'])
+        user.set_password(request.data['password'])
+        user.save()
+        token = Token.objects.create(user=user)
+        return Response({'token': token.key, 'user': serializer.data})
+    return Response(serializer.errors)
+
+from django.shortcuts import redirect
+
+@api_view(['POST'])
+def login(request):
+    user = get_object_or_404(User, username=request.data['username'])
+    if not user.check_password(request.data['password']):
+        return Response("missing user")
+    token, created = Token.objects.get_or_create(user=user)
+    serializer = UserSerializer(user)
+    response = Response({'token': token.key, 'user': serializer.data})
+    response.set_cookie(key='token', value=token.key)  
+    return redirect('/')  
 
 @csrf_exempt
 def store_name(request):
@@ -20,7 +54,8 @@ def store_name(request):
             serializer = TaskSerializer(data=data)
             if serializer.is_valid():
                 serializer.save()
-                return JsonResponse({'success': True, 'message': 'Data stored successfully'})
+               
+                return JsonResponse({'success': True , 'message': 'Data stored successfully'})
             return JsonResponse({'success': False, 'message': serializer.errors}, status=400)
         except Exception as e:
             logger.exception("Error storing data: %s", str(e))
