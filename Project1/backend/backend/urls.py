@@ -23,9 +23,10 @@ from firstApp.views import index, store_name, get_data, download_data, delete_da
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('signup/', signup, name='signup'),  # Use a trailing slash for consistency
-    path('login/', login, name='login'),  # Use a trailing slash for consistency
+    path('', login, name='login'),
+    path('signup/', signup, name='signup'),  
+    path('index/', index, name='index'),
+    path('login/', login, name='login'),  
     path('store-name/', store_name, name='store_name'),
     path('get-data/', get_data, name='get_data'),
     path('download/', download_data, name='download_data'),

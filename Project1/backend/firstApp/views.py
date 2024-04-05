@@ -44,7 +44,7 @@ def login(request):
     serializer = UserSerializer(user)
     response = Response({'token': token.key, 'user': serializer.data})
     response.set_cookie(key='token', value=token.key)  
-    return redirect('/')  
+    return redirect('index/')  
 
 @csrf_exempt
 def store_name(request):
@@ -138,8 +138,6 @@ def read_data_from_file():
                     current_entry['title'] = line.split(': ')[1]  
                 elif line.startswith('Due-Date :'):
                     current_entry['due_date'] = line.split(': ')[1] 
-            
-           
             if current_entry:
                 data.append(current_entry)
                 
