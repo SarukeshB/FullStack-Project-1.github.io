@@ -50,8 +50,8 @@ const Header = () => {
         <div className='task_detail' id="task-details">
           <h2>Task Details</h2>
           <p>ID: {taskDetails.id}</p>
-          <p>Task: {taskDetails.title}</p> {/* Corrected property name */}
-          <p>Due Date: {taskDetails.due_date}</p> {/* Corrected property name */}
+          <p>Task: {taskDetails.title}</p> 
+          <p>Due Date: {taskDetails.due_date}</p> 
         </div>
       )}
       {error && <p className="error-message">{error}</p>}

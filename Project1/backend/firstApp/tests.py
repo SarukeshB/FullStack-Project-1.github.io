@@ -1,29 +1,72 @@
-import os
+from selenium import webdriver
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.common.by import By
 import json
-import logging
-from django.test import TestCase
-from rest_framework import status
-from django.urls import reverse
-from django.contrib.auth.models import User
+import time
 
-from django.urls import reverse
-from rest_framework import status
-from rest_framework.test import APITestCase
-from django.contrib.auth.models import User
+#creating a dictionary named 'credentials'
+credentials = {
+    "username": "srks",
+    "password": "123"
+}
+#Convert dictionary to a Json string
+credentials_json = json.dumps(credentials) 
 
-class UserSignupLoginTestCase(APITestCase):
-    def test_user_signup(self):
-        url = reverse('signup')  
-        data = {'username': 'testuser', 'password': 'password123'}
-        response = self.client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue('token' in response.data)
-        self.assertEqual(User.objects.count(), 1)
+driver = webdriver.Edge(
+    service=Service(EdgeChromiumDriverManager().install()))
 
-    def test_user_login(self):
-        self.test_user_signup()  
-        url = reverse('login') 
-        data = {'username': 'testuser', 'password': 'password123'}
-        response = self.client.post(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_302_FOUND)  
+#Maximize the Window
+driver.maximize_window()
 
+#Search fo The URL
+driver.get("http://127.0.0.1:8000/")
+
+#login
+time.sleep(2)
+textarea_input = driver.find_element(By.NAME, "_content")
+textarea_input.send_keys(credentials_json)
+post_button = driver.find_element(By.XPATH, "//button[text()='POST']")
+post_button.click()
+time.sleep(2)
+
+#Adding Data
+id_input = driver.find_element(By.CLASS_NAME, 'id' )
+id_input.clear()
+id_input.send_keys("1")
+title_input = driver.find_element(By.CLASS_NAME, 'title' )
+title_input.clear()
+title_input.send_keys("test")
+date_input = driver.find_element(By.CLASS_NAME, 'date' )
+date_input.clear()
+date_input.send_keys("2024-05-05")
+post_button = driver.find_element(By.XPATH, "//button[text()='Submit']")
+post_button.click()
+time.sleep(4)
+
+#Search Data
+search_input = driver.find_element(By.CLASS_NAME, "search-bar")
+search_input.clear()
+search_input.send_keys('1')
+search_btn = driver.find_element(By.XPATH, "//button[text()='Search']")
+search_btn.click()
+time.sleep(4)
+
+#Delete Data
+delete_input = driver.find_element(By.CLASS_NAME, 'delete')
+delete_input.clear()
+delete_input.send_keys('1')
+delete_btn = driver.find_element(By.XPATH, "//button[text()='Completed']")
+delete_btn.click()
+time.sleep(2)
+
+#Re-Login
+textarea_input = driver.find_element(By.NAME, "_content")
+textarea_input.send_keys(credentials_json)
+post_button = driver.find_element(By.XPATH, "//button[text()='POST']")
+post_button.click()
+
+print("Everything Works Well..!!!")
+input("Press Enter to close the browser...")
+driver.quit()

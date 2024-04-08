@@ -60,13 +60,13 @@ function NameForm() {
             <form onSubmit={handleSubmit}>
                 <label>
                     Add New task <br /><br />
-                    <input className="Complete-label" type="text" placeholder='Enter ID' value={id} onChange={(e) => setId(e.target.value)} />
+                    <input className="Complete-label id" type="text" placeholder='Enter ID' value={id} onChange={(e) => setId(e.target.value)} />
                 </label>
                 <label>
-                    <input className="Complete-label" type="text" placeholder='Enter title of Task' value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input className="Complete-label title" type="text" placeholder='Enter title of Task' value={title} onChange={(e) => setTitle(e.target.value)} />
                 </label>
                 <label>
-                    <input className="Complete-label" type="text" placeholder='Enter Due Date' value={due_date} onChange={(e) => setDueDate(e.target.value)} />
+                    <input className="Complete-label date" type="text" placeholder='Enter Due Date' value={due_date} onChange={(e) => setDueDate(e.target.value)} />
                 </label>
                 <button className="button-38" type="submit">Submit</button>
             </form>
@@ -92,9 +92,9 @@ function NameForm() {
                 <div>
                     <label>
                         Remove Completed Task
-                        <input className="Complete-label" placeholder='Enter ID to Remove' type="text" value={idToDelete} onChange={(e) => setIdToDelete(e.target.value)} />
+                        <input className="Complete-label delete" placeholder='Enter ID to Remove' type="text" value={idToDelete} onChange={(e) => setIdToDelete(e.target.value)} />
                     </label>
-                    <button className="button-38" onClick={handleDelete}>Completed</button>
+                    <button className="button-38 del_btn" onClick={handleDelete}>Completed</button>
                 </div>
             </form>
         </div>
