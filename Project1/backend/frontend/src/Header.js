@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header>
       <div id='logo_pic'>
-        <img className="profile-in-about" src={image_png} alt="image" /><br />
+        <img className="profile-in-about" src={image_png} alt="" /><br />
         <h1>SARUKESH BOOMINATHAN</h1>
         <div>
           <p> A {handleNameChange()} Developer </p>

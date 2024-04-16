@@ -1,8 +1,38 @@
+POST  http://127.0.0.1:8000/signup/
+content-type: application/json
+{
+    "username": "srks",
+    "password": "123",
+    "email":"bsarukesh@gail.com"
+}
+
+###
+POST HTTP://127.0.0.1:8000/
+content-type: application/json
+{
+    "username": "srks",
+    "password": "123",
+}
+
+###
 POST  http://127.0.0.1:8000/store-name/
 content-type: application/json
-
 {
-    "id": "63fkjkhgjhb8",
+    "id": "100",
     "title": "Task 1",
     "due_date": "2024-03-21"
+}
+
+###
+POST  http://127.0.0.1:8000/search_task_details/
+content-type: application/json
+{
+    "id": "100",
+}
+
+###
+POST  http://127.0.0.1:8000/delete_data/
+content-type: application/json
+{
+    "id": "100",
 }

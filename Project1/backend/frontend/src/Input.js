@@ -30,7 +30,7 @@ function NameForm() {
         event.preventDefault();
         try {
             await axios.post('/store-name/', { id, title, due_date });
-            alert('Data stored successfully!');
+            console.log('Data stored successfully!');
             setId('');
             setTitle('');
             setDueDate('');
@@ -45,7 +45,7 @@ function NameForm() {
     const handleDelete = async () => {
         try {
             await axios.post('/delete-data/', { id: idToDelete });
-            alert('Data deleted successfully!');
+            console.log('Data deleted successfully!');
             setIdToDelete('');
             setTasks(tasks.filter(task => task.id !== idToDelete));
         } catch (error) {
@@ -71,9 +71,10 @@ function NameForm() {
                 <button className="button-38" type="submit">Submit</button>
             </form>
 
-            <h2>Task's To Complete ☑️</h2>
+            
 
             <div className='task-to'>
+            <h2>Task's To Complete ☑️</h2>
                 <ul>
                     {tasks.map((task, index) => (
                         <li key={index}>{task && (
