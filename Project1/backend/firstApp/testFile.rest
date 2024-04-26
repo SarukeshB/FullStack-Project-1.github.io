@@ -11,7 +11,7 @@ POST HTTP://127.0.0.1:8000/
 content-type: application/json
 {
     "username": "srks",
-    "password": "123",
+    "password": "123"
 }
 
 ###

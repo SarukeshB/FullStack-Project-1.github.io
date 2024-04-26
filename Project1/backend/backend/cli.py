@@ -55,3 +55,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+## py cli.py list
+## py cli.py add --title "Finish project" --due_date "2024-04-30"
+## py cli.py delete --id 123

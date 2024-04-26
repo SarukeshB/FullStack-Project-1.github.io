@@ -18,7 +18,7 @@ driver.maximize_window()
 
 #Search fo The URL
 driver.get("http://127.0.0.1:8000/")
-print("Your Server is running..!!")
+print("Testing: URL\n")
 
 
 #login
@@ -27,7 +27,7 @@ textarea_input = driver.find_element(By.NAME, "_content")
 textarea_input.send_keys(credentials_json)
 post_button = driver.find_element(By.XPATH, "//button[text()='POST']")
 post_button.click()
-print("login success ")
+print("Testing: login \nLogin Success\n")
 time.sleep(2)
 
 #Adding Data
@@ -42,7 +42,7 @@ date_input.clear()
 date_input.send_keys("2024-05-05")
 post_button = driver.find_element(By.XPATH, "//button[text()='Submit']")
 post_button.click()
-print("Data added successfully ")
+print("Testing: STore-name Function \nData added successfully \n")
 time.sleep(2)
 
 #Search Data
@@ -51,7 +51,7 @@ search_input.clear()
 search_input.send_keys('1')
 search_btn = driver.find_element(By.XPATH, "//button[text()='Search']")
 search_btn.click()
-print("Search function is working perfectly")
+print("Testing: Search Function\nSearch function is working perfectly \n")
 time.sleep(2)
 
 #Delete Data
@@ -60,7 +60,7 @@ delete_input.clear()
 delete_input.send_keys('1')
 delete_btn = driver.find_element(By.XPATH, "//button[text()='Completed']")
 delete_btn.click()
-print("Delete function is working perfectly")
+print("Testing: Delete Function\nDelete function is working perfectly \n")
 time.sleep(2)
 
 
@@ -69,7 +69,7 @@ textarea_input = driver.find_element(By.NAME, "_content")
 textarea_input.send_keys(credentials_json)
 post_button = driver.find_element(By.XPATH, "//button[text()='POST']")
 post_button.click()
-print("Re-login success ")
+print("Testing: Login Function\nRe-login success \n")
 
 print("Everything Works Well..!!!")
 time.sleep(2)
